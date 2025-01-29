@@ -28,11 +28,19 @@
 </head>
 <body>
     <div class="logo-container">
-        <img src="Logo Arq.LSuchac.jpg" alt="Logo Animado" class="logo">
+        <img id="logo" src="Imagenes/logo1.jpg" alt="Logo Animado" class="logo">
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             console.log("Página cargada correctamente");
+            
+            const images = ["Imagenes/logo1.jpg", "Imagenes/logo2.jpg", "Imagenes/logo3.jpg", "Imagenes/logo4.jpg"];
+            let index = 0;
+            
+            setInterval(() => {
+                index = (index + 1) % images.length;
+                document.getElementById("logo").src = images[index];
+            }, 500);
         });
     </script>
 </body>
